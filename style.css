@@ -164,7 +164,8 @@ body{
     'num1 num2 num3 mns'
     'dot num0 dvd times'
     'res res equ equ';
-    gap:1rem;
+    grid-column-gap:1rem;
+    grid-row-gap: 1.3rem;
     height:100%;
     grid-auto-columns: 1fr;
     grid-auto-flow: column;
