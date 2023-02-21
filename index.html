@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Calculator app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="theme0">
+    <div id="calculator">
+      <div id="calc">
+        <div id="logo">calc</div>
+        <div id="toggle" onclick="changeTheme()">
+          <div id="thm">Theme</div>
+          <div id="tgl">
+            <div id="top">
+              <b>1</b>
+              <b>2</b>
+              <b>3</b>
+            </div>
+            <div id="tog">
+              <div id="tglBall"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="screen">0</div>
+      <div id="numpadcontain">
+        <div id="numpad">
+          <button class="numberBtn" id="num7">7</button>
+          <button class="numberBtn" id="num8">8</button>
+          <button class="numberBtn" id="num9">9</button>
+          <button class="numberBtn" id="num4">4</button>
+          <button class="numberBtn" id="num5">5</button>
+          <button class="numberBtn" id="num6">6</button>
+          <button class="numberBtn" id="num1">1</button>
+          <button class="numberBtn" id="num2">2</button>
+          <button class="numberBtn" id="num3">3</button>
+          <button class="numberBtn" id="num0">0</button>
+          <button class="numberBtn" id="dot">.</button>
+          <button id="del">DEL</button>
+          <button id="mns">-</button>
+          <button id="dvd">/</button>
+          <button id="pls">+</button>
+          <button id="times">x</button>
+          <button id="res">RESET</button>
+          <button id="equ">=</button>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io/profile/firkan" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://github.com/doganfurkan" target="_blank">Furkan Doğan</a>.
+    </div>
+    <script src="calculations.js"></script>
+    <script>
+      var theme = 0;
+      function changeTheme(){
+        theme++;
+        let thm = theme % 3;
+        document.body.classList = `theme${thm}`;
+      }
+    </script>
+  </body>
+</html>
