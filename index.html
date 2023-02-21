@@ -18,7 +18,7 @@
       rel="stylesheet"
     />
   </head>
-  <body class="theme0">
+  <body class="theme0" onload="setWidth()">
     <div id="calculator">
       <div id="calc">
         <div id="logo">calc</div>
@@ -69,6 +69,10 @@
     </div>
     <script src="calculations.js"></script>
     <script>
+      function setWidth(){
+        let w = document.getElementById("calculator").offsetWidth;
+        document.getElementById("calculator").style.maxWidth = w + "px";
+      }
       var theme = 0;
       function changeTheme(){
         theme++;
