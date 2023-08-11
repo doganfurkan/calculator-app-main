@@ -1,3 +1,8 @@
+// ------------ !!!!!! This is the old file where each operation is written by hand 
+
+
+
+
 const screen = document.getElementById("screen");
 const del = document.getElementById("del");
 const reset = document.getElementById("res");
@@ -21,14 +26,30 @@ window.addEventListener("load", () => {
       [i].addEventListener("click", (event) => {
         if (event.target.innerHTML == ".") {
           if (
-            result.slice(-1) == "+" ||
-            result.slice(-1) == "-" ||
-            result.slice(-1) == "x" ||
-            result.slice(-1) == "/"
+            ((String(result).indexOf("+") < 0 ||
+              String(result).indexOf("x") < 0 ||
+              String(result).indexOf("-") < 0 ||
+              String(result).indexOf("/") < 0) &&
+              String(result).indexOf(".") < 0) ||
+            ((String(result).indexOf("+") > 0 ||
+              String(result).indexOf("x") > 0 ||
+              String(result).indexOf("-") > 0 ||
+              String(result).indexOf("/") > 0) &&
+              String(result).indexOf(".") > String(result).indexOf("/") > 0 &&
+              String(result).indexOf(".") > String(result).indexOf("x") > 0 &&
+              String(result).indexOf(".") > String(result).indexOf("-") > 0 &&
+              String(result).indexOf(".") > String(result).indexOf("+") > 0)
           ) {
-            result = `${result}0${event.target.innerHTML}`;
-          } else {
-            result = `${result}${event.target.innerHTML}`;
+            if (
+              String(result).slice(-1) == "+" ||
+              String(result).slice(-1) == "-" ||
+              String(result).slice(-1) == "x" ||
+              String(result).slice(-1) == "/"
+            ) {
+              result = `${result}0${event.target.innerHTML}`;
+            } else {
+              result = `${result}${event.target.innerHTML}`;
+            }
           }
         } else if (result == "0") {
           result = event.target.innerHTML;
@@ -288,14 +309,14 @@ equals.addEventListener("click", () => {
         result = result.slice(0, result.length - 1);
       }
       number1 = result;
-      result = String(result)
+      result = String(result);
       screen.innerHTML = result;
     } else {
       number1 = result;
-      result = String(result)
+      result = String(result);
       screen.innerHTML = result;
     }
-    console.log(result)
+    console.log(result);
     scrollScreen();
   }
 });
