@@ -51,10 +51,10 @@
           <button class="numberBtn" id="num0">0</button>
           <button class="numberBtn" id="dot">.</button>
           <button id="del">DEL</button>
-          <button id="mns">-</button>
-          <button id="dvd">/</button>
-          <button id="pls">+</button>
-          <button id="times">x</button>
+          <button id="mns" class="makeCalculation">-</button>
+          <button id="dvd" class="makeCalculation">/</button>
+          <button id="pls" class="makeCalculation">+</button>
+          <button id="times" class="makeCalculation">*</button>
           <button id="res">RESET</button>
           <button id="equ">=</button>
         </div>
@@ -67,7 +67,7 @@
       >. Coded by
       <a href="https://github.com/doganfurkan" target="_blank">Furkan Doğan</a>.
     </div>
-    <script src="calculations.js"></script>
+    <script src="script.js"></script>
     <script>
       function setWidth(){
         let w = document.getElementById("calculator").offsetWidth;

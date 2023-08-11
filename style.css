@@ -76,7 +76,8 @@ body{
     display: flex;
     align-items: flex-end;
     gap:1.5rem;
-    padding-bottom:.25rem
+    padding-bottom:.25rem;
+    cursor: pointer;
 }
 
 #thm{
@@ -145,6 +146,7 @@ body{
     background: var(--screenBg);
     border-radius: .5rem;
     overflow-x: auto;
+    white-space: nowrap;
 }
 
 #numpadcontain{
